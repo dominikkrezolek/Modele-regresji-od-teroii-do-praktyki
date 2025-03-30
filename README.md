@@ -1,1 +1,1 @@
-# Analiza-regresji-od-teroii-do-praktyki
+# Modele-regresji-od-teroii-do-praktyki
