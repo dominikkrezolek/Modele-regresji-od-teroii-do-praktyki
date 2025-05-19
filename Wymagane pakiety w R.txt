@@ -1,0 +1,37 @@
+### Lista pakietów do instalacji
+
+packages <- c(
+  "caret", "dplyr", "ggplot2", "glmnet", "KernSmooth",
+  "mgcv", "quantmod", "readxl", "reshape2", "sf",
+  "spatialreg", "spdep", "tidyr", "tidyverse"
+)
+
+### Instalacja pakietów, jeśli jeszcze nie są zainstalowane
+
+installed <- rownames(installed.packages())
+for (p in packages) {
+  if (!(p %in% installed)) {
+    install.packages(p, dependencies = TRUE)
+  }
+}
+
+# Uwaga: Pakiet sf i inne związane z analizą przestrzenną (spatialreg, spdep) mogą wymagać dodatkowych bibliotek systemowych. Na Windows są one automatycznie dołączone, ale na Linux/macOS mogą wymagać np. gdal, proj, geos.
+
+### Uruchomienie pakietów
+
+library(caret)
+library(dplyr)
+library(ggplot2)
+library(glmnet)
+library(KernSmooth)
+library(mgcv)
+library(quantmod)
+library(readxl)
+library(reshape2)
+library(sf)
+library(spatialreg)
+library(spdep)
+library(tidyr)
+library(tidyverse)
+
+# Uwaga: Pakiet tidyverse automatycznie ładuje kilka pakietów, m.in. dplyr, ggplot2, readr, tidyr, tibble, stringr, forcats, ale nie caret, sf, spdep, itd.
